@@ -10,3 +10,9 @@
   tasks:
   - name: DNS Tasks
     include_tasks: tasks/dns.yaml
+
+- name: Setup wwwdata
+  hosts: app
+  tasks:
+  - name: wwwdata Tasks
+    include_tasks: tasks/wwwdata.yaml

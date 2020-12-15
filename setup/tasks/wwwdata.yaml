@@ -1,0 +1,18 @@
+---
+- name: Web - Create directory localhost
+  become: True
+  file:
+    path: /var/www/vhosts/{{ vhost_name }}/
+    state: directory
+    owner: root
+    group: root
+    recurse: yes
+
+- name: Web - Copy localhost index.html
+  become: True
+  copy:
+    src: /vagrant/www/{{ vhost_name }}/index.html
+    dest: /var/www/vhosts/{{ vhost_name }}/index.html
+    owner: root
+    group: root
+    backup: no
