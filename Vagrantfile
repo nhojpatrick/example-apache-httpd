@@ -41,6 +41,12 @@ Vagrant.configure("2") do |config|
     # automated ansible install fails so manual install
     inst.vm.provision "shell", inline: "sudo apt update"
     inst.vm.provision "shell", inline: "sudo apt install -y ansible"
+
+    # ansible setup of touchdown
+    inst.vm.provision "ansible_local" do |ansible|
+      ansible.compatibility_mode = "2.0"
+      ansible.playbook = "provisioning/touchdown_setup.yaml"
+    end
   end
 
   config.vm.define "webhost0", autostart: true do |inst|
