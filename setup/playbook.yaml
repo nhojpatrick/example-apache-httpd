@@ -16,3 +16,9 @@
   tasks:
   - name: wwwdata Tasks
     include_tasks: tasks/wwwdata.yaml
+
+- name: Setup Apache
+  hosts: all
+  tasks:
+  - name: Apache Tasks
+    include_tasks: tasks/apache.yaml

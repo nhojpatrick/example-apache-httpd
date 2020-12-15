@@ -1,0 +1,4 @@
+---
+- name: Configure apache httpd
+  include_role:
+    name: geerlingguy.apache

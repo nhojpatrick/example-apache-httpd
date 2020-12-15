@@ -1,2 +1,14 @@
 
+vhost_name: "{{ inventory_hostname }}"
+
+apache_listen_port: 8080
+
 dns_aliases: []
+
+new_web_host: "newweb.dmz.example.tld"
+new_web_port: "{{ apache_listen_port }}"
+new_web_baseurl: "http://{{ new_web_host }}:{{ new_web_port }}"
+
+old_web_host: "oldweb.dmz.example.tld"
+old_web_port: "{{ apache_listen_port }}"
+old_web_baseurl: "http://{{ old_web_host }}:{{ old_web_port }}"

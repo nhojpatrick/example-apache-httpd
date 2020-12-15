@@ -1,0 +1,30 @@
+
+apache_vhosts:
+  - {
+    servername: "{{ vhost_name }}",
+    serveralias: "{{ new_web_host }}",
+    proxy: {
+      members: [
+        {
+          host: "http://newapp1.newapp.core.example.tld:8080"
+        },
+        {
+          host: "http://newapp2.newapp.core.example.tld:8080"
+        }
+      ]
+    }
+  }
+  - {
+    servername: "{{ vhost_name }}",
+    serveralias: "{{ old_web_host }}",
+    redirectmatches: [
+      {
+        from: "^/search/(.*)",
+        to: "{{ new_web_baseurl }}/index.html?q=$1"
+      },
+      {
+        from: "^/(.*)",
+        to: "{{ new_web_baseurl }}/$1"
+      }
+    ]
+  }
