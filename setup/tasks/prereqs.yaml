@@ -20,3 +20,8 @@
     name: httpd_can_network_connect
     state: yes
     persistent: yes
+
+- name: tcpdump for wireshark
+  become: true
+  yum:
+    name: tcpdump
