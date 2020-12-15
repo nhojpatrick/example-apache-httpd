@@ -37,4 +37,19 @@ Vagrant.configure("2") do |config|
     inst.vm.hostname = "touchdown"
   end
 
+  config.vm.define "webhost0", autostart: true do |inst|
+    inst.vm.box = "centos/7"
+    inst.vm.hostname = "webhost0"
+  end
+
+  config.vm.define "webhost1", autostart: true do |inst|
+    inst.vm.box = "centos/7"
+    inst.vm.hostname = "webhost1"
+  end
+
+  config.vm.define "webhost2", autostart: true do |inst|
+    inst.vm.box = "centos/7"
+    inst.vm.hostname = "webhost2"
+  end
+
 end
