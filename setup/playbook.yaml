@@ -4,3 +4,9 @@
   tasks:
   - name: Pre Req Tasks
     include_tasks: tasks/prereqs.yaml
+
+- name: Setup DNS
+  hosts: all
+  tasks:
+  - name: DNS Tasks
+    include_tasks: tasks/dns.yaml

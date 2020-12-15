@@ -1,0 +1,4 @@
+
+dns_aliases:
+  - { ip: '192.168.123.191', host: 'newapp1.newapp.core.example.tld' }
+  - { ip: '192.168.123.192', host: 'newapp2.newapp.core.example.tld' }
