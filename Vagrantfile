@@ -36,6 +36,7 @@ Vagrant.configure("2") do |config|
     inst.vm.boot_timeout = 1200
     inst.vm.hostname = "touchdown"
     inst.vm.network "private_network", ip: "192.168.123.199"
+    inst.vm.synced_folder ".", "/vagrant"
   end
 
   config.vm.define "webhost0", autostart: true do |inst|
