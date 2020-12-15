@@ -42,18 +42,24 @@ Vagrant.configure("2") do |config|
     inst.vm.box = "centos/7"
     inst.vm.hostname = "webhost0"
     inst.vm.network "private_network", ip: "192.168.123.190"
+    inst.vm.network :forwarded_port, guest: 22, host: 2290
+    inst.vm.network :forwarded_port, guest: 8080, host: 8180
   end
 
   config.vm.define "webhost1", autostart: true do |inst|
     inst.vm.box = "centos/7"
     inst.vm.hostname = "webhost1"
     inst.vm.network "private_network", ip: "192.168.123.191"
+    inst.vm.network :forwarded_port, guest: 22, host: 2291
+    inst.vm.network :forwarded_port, guest: 8080, host: 8181
   end
 
   config.vm.define "webhost2", autostart: true do |inst|
     inst.vm.box = "centos/7"
     inst.vm.hostname = "webhost2"
     inst.vm.network "private_network", ip: "192.168.123.192"
+    inst.vm.network :forwarded_port, guest: 22, host: 2292
+    inst.vm.network :forwarded_port, guest: 8080, host: 8182
   end
 
 end
