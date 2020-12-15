@@ -37,6 +37,10 @@ Vagrant.configure("2") do |config|
     inst.vm.hostname = "touchdown"
     inst.vm.network "private_network", ip: "192.168.123.199"
     inst.vm.synced_folder ".", "/vagrant"
+
+    # automated ansible install fails so manual install
+    inst.vm.provision "shell", inline: "sudo apt update"
+    inst.vm.provision "shell", inline: "sudo apt install -y ansible"
   end
 
   config.vm.define "webhost0", autostart: true do |inst|
