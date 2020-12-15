@@ -1,0 +1,7 @@
+
+[web]
+webhost0.example.tld
+
+[app]
+webhost1.example.tld
+webhost2.example.tld
