@@ -35,21 +35,25 @@ Vagrant.configure("2") do |config|
     inst.vm.box = "ubuntu/focal64"
     inst.vm.boot_timeout = 1200
     inst.vm.hostname = "touchdown"
+    inst.vm.network "private_network", ip: "192.168.123.199"
   end
 
   config.vm.define "webhost0", autostart: true do |inst|
     inst.vm.box = "centos/7"
     inst.vm.hostname = "webhost0"
+    inst.vm.network "private_network", ip: "192.168.123.190"
   end
 
   config.vm.define "webhost1", autostart: true do |inst|
     inst.vm.box = "centos/7"
     inst.vm.hostname = "webhost1"
+    inst.vm.network "private_network", ip: "192.168.123.191"
   end
 
   config.vm.define "webhost2", autostart: true do |inst|
     inst.vm.box = "centos/7"
     inst.vm.hostname = "webhost2"
+    inst.vm.network "private_network", ip: "192.168.123.192"
   end
 
 end
