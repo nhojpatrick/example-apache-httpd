@@ -30,4 +30,11 @@ Vagrant.configure("2") do |config|
     vb.customize ["modifyvm", :id, "--audio", "none"]
   end
 
+  config.vm.define "touchdown", autostart: false do |inst|
+    # ubuntu 20.04 Focal Fossa 2020-04 - eol 2025-04
+    inst.vm.box = "ubuntu/focal64"
+    inst.vm.boot_timeout = 1200
+    inst.vm.hostname = "touchdown"
+  end
+
 end
