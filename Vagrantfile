@@ -23,4 +23,11 @@ Vagrant.configure("2") do |config|
     source: 'provisioning/.ssh/id_rsa',
     destination: '~/.ssh/id_rsa'
 
+  config.vm.provider "virtualbox" do |vb|
+    vb.gui = false
+    vb.cpus = "1"
+    vb.memory = "512"
+    vb.customize ["modifyvm", :id, "--audio", "none"]
+  end
+
 end
