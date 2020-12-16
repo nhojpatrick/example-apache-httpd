@@ -2,20 +2,17 @@
 
 ## Supported Versions
 
-Use this section to tell people about which versions of your project are
-currently being supported with security updates.
+No versions are supported.
 
-| Version | Supported          |
-| ------- | ------------------ |
-| 5.1.x   | :white_check_mark: |
-| 5.0.x   | :x:                |
-| 4.0.x   | :white_check_mark: |
-| < 4.0   | :x:                |
+The example should be used for training and learning purposes only. For production deployments, the documentation for component should be checked for steps to correctly secure your production setup.
 
 ## Reporting a Vulnerability
 
-Use this section to tell people how to report a vulnerability.
+Several components are used as part of this example. Any vulnerability should be reported back directly.
 
-Tell them where to go, how often they can expect to get an update on a
-reported vulnerability, what to expect if the vulnerability is accepted or
-declined, etc.
+Components used are;
+
+1. Vagrant
+1. VirtualBox
+1. Ansible
+1. Apache
